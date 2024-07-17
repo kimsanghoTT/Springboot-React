@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0/EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings>
+	<!-- 
+	Mybatis에서 null값을 처리하는 방법을 지정하는 설정
+		- DB나 JAVA에서 가져오는 값이 null일 때 어떻게 처리할 것인가
+		
+		value = Null이라고 작성하면 Null이 들어가고
+		value = VARCHAR2나 int 특정값으로 null을 db에 전달하겠다는 설정
+	 -->
+		<setting name="jdbcTypeForNull" value="NULL"/>
+			
+		<!-- 
+		중간에 _ 들어가는 게 underscore
+		DB에 언더스코어로 작성된 값을 java에서는 카멜케이스로 표기하겠다 선언
+		 -->
+		<setting name="mapUnderscoreToCamelCase" value="true" />
+	</settings>
+</configuration>
