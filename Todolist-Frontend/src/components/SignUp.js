@@ -67,6 +67,9 @@ const SignUp = () => {
                 setResult('회원 가입 실패');
             }
         })
+        .catch(error => {
+            console.error('There was a problem with your fetch operation:', error);
+        });
     }
 
     return(

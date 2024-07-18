@@ -8,8 +8,7 @@ import lombok.ToString;
 @Setter
 @ToString
 public class TodoMember {
-
-	private int TodoMemberNo;
+	private int todoMemberNo;
 	private String id;
 	private String pw;
 	private String name;
