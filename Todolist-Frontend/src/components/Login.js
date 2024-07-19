@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import TodoListContext from './TodoListContext';
 
-const Login = () => {
+const LoginComponent = () => {
 
   /* 전역 변수 Context에서 (좌변)변수명과 (우변)키가 일치하는 값을 얻어와 대입 */
   const { loginMember, setLoginMember, setTodoList } = useContext(TodoListContext);
@@ -77,4 +77,4 @@ const Login = () => {
 
 }
 
-export default Login;
+export default LoginComponent;

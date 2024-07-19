@@ -34,29 +34,31 @@
   font-weight: bold;
 }
 
-
-.todo-container{
-  padding: 20px;
+.todo-container {
+  padding:20px;
   width: 500px;
 }
 
-.todo-container li{
+.todo-container li {
   margin-bottom: 10px;
 }
 
-.todo-container li > div{
-  display: flex;
+.todo-container li > div {
+  display:  flex;
   justify-content: space-between;
 }
 
-.todo-container li > div > span:last-child{
+/* span 태그에서 가장 마지막에 있는 삭제 버튼에서 다음줄로 넘김처리*/
+.todo-container li > div span:last-child{
   display: flex;
 }
 
-.todo-container li > div button{
+/* 수정 삭제 버튼 좌우 간격주기*/
+.todo-container li > div button {
   margin: 0 5px;
 }
 
-.todo-complete{
+/* 가운데 줄 긋기*/
+.todo-complete {
   text-decoration: line-through;
 }

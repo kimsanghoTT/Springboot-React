@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import TodoListContext from './components/TodoListContext';
-import SignUp from './components/SignUp';
+import Signup from './components/SignUp'
 import Login from './components/Login';
 import TodoList from './components/TodoList';
 
@@ -24,8 +24,12 @@ function App() {
       </button>
       {/* 회원 가입 화면 */}
       <div className='signup-wrapper'>
+        {/* Signup.js 에서 import한 컴포넌트 */}
+
         {/* signupView가 true인 경우에만 화면에 출력 */}
-        {  signupView === true && (<SignUp/>) }
+        
+        {/* 조건식 && (true인 경우 실행) */}
+        {  signupView === true && (<Signup/>) }
       </div>
       <h1>Todo List</h1>
       {/* 로그인 컴포넌트 */}

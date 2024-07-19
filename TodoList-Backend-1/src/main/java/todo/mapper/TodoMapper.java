@@ -9,12 +9,12 @@ import todo.dto.TodoMember;
 
 @Mapper
 public interface TodoMapper {
-	
 	int idCheck(String id);
 	int signup(TodoMember member);
 	TodoMember login(TodoMember member);
-	List<Todo> selectTodoList(int TodoMemberNo);
-	int insert(Todo member);
-	int update(Todo member);
-	int delete(int TodoNo);
+	List<Todo> selectTodoList(int todoMemberNo);
+	int insert(Todo todo);
+	int update(Todo todo);
+	int delete(int todoNo);
+
 }
