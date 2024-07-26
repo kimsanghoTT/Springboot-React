@@ -13,4 +13,10 @@
 	<insert id="insertUser" parameterType="User" useGeneratedKeys="true" keyProperty="id">
 		insert into user(name, email) values(#{name}, #{email})
 	</insert>
+	<delete id="deleteUser" parameterType="int">
+		delete from user where id = #{id}
+	</delete>
+	<update id="updateUser" parameterType="User">
+		update user set where name = #{name}, email = #{email} where id = #{id}
+	</update>
 </mapper>

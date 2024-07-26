@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class LiveChat2Application {
+public class LivechatApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(LiveChat2Application.class, args);
+		SpringApplication.run(LivechatApplication.class, args);
 	}
 
 }
