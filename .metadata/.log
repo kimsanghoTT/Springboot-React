@@ -3557,3 +3557,24 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY org.springframework.tooling.boot.ls 1 0 2024-07-29 17:29:43.288
 !MESSAGE Boot project ADDED: spring-tosspay-backend
+
+!ENTRY org.eclipse.egit.core 4 0 2024-07-29 17:32:48.788
+!MESSAGE An exception occurred during push on URI https://github.com/kimsanghoTT/Springboot-React.git: https://github.com/kimsanghoTT/Springboot-React.git: not authorized
+!STACK 0
+org.eclipse.jgit.api.errors.TransportException: https://github.com/kimsanghoTT/Springboot-React.git: not authorized
+	at org.eclipse.jgit.api.PushCommand.call(PushCommand.java:168)
+	at org.eclipse.egit.core.op.PushOperation.run(PushOperation.java:315)
+	at org.eclipse.egit.ui.internal.push.PushJob.performJob(PushJob.java:86)
+	at org.eclipse.egit.ui.internal.jobs.RepositoryJob.run(RepositoryJob.java:59)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: org.eclipse.jgit.errors.TransportException: https://github.com/kimsanghoTT/Springboot-React.git: not authorized
+	at org.eclipse.jgit.transport.TransportHttp.connect(TransportHttp.java:695)
+	at org.eclipse.jgit.transport.TransportHttp.connect(TransportHttp.java:637)
+	at org.eclipse.jgit.transport.TransportHttp.openPush(TransportHttp.java:541)
+	at org.eclipse.jgit.transport.PushProcess.execute(PushProcess.java:140)
+	at org.eclipse.jgit.transport.Transport.push(Transport.java:1557)
+	at org.eclipse.jgit.api.PushCommand.call(PushCommand.java:158)
+	... 4 more
+
+!ENTRY org.eclipse.egit.ui 4 0 2024-07-29 17:32:48.790
+!MESSAGE Can't connect to any repository: https://github.com/kimsanghoTT/Springboot-React.git (https://github.com/kimsanghoTT/Springboot-React.git: not authorized)
