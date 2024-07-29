@@ -1,6 +1,4 @@
-package chat.model;
-
-import java.time.LocalDateTime;
+package com.kh.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -13,9 +11,9 @@ import lombok.ToString;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-public class ChatMessage {
+public class User {
 
-	private String sender;
-	private String content;
-	private LocalDateTime timestamp;
+	private int id;
+	private String name;
+	private String email;
 }
