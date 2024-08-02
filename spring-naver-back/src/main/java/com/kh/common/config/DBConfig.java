@@ -1,6 +1,5 @@
 package com.kh.common.config;
 
-
 import java.io.IOException;
 
 import javax.sql.DataSource;
@@ -20,42 +19,44 @@ import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
 @Configuration
-@PropertySource("classpath:/config.properties") 
+@PropertySource("classpath:/config.properties")
 public class DBConfig {
-
-	@Autowired
-	private ApplicationContext applicationContext; 
 	
-	@Bean
-	@ConfigurationProperties(prefix="spring.datasource.hikari")
+	@Autowired
+	private ApplicationContext applicationContext;
+	
+	
+	@Bean 
+	@ConfigurationProperties(prefix = "spring.datasource.hikari")
 	public HikariConfig hikariConfig() {
-
 		return new HikariConfig(); 
 	}
 	
-	@Bean
+	
+	@Bean 
 	public DataSource dataSource(HikariConfig config) {
-		DataSource dataSource = new HikariDataSource(config);
-		return dataSource;
+	    return new HikariDataSource(config);
 	}
+	
 	
 	@Bean
 	public SqlSessionFactory sessionFactory(DataSource dataSource) throws Exception {
 		SqlSessionFactoryBean sfb = new SqlSessionFactoryBean();
-		sfb.setDataSource(dataSource);
+		sfb.setDataSource(dataSource); //HikariConfig에서 받은 정보로 연결한 DataBase 연결 경로를 가져와서 사용
 		sfb.setMapperLocations(applicationContext.getResources("classpath:/mappers/**.xml"));
 		sfb.setTypeAliasesPackage("com.kh.dto"); 
-		sfb.setConfigLocation(applicationContext.getResource("classpath:mybatis-config.xml")); 
+		sfb.setConfigLocation(applicationContext.getResource("classpath:mybatis-config.xml"));
 		return sfb.getObject();
 	}
+	
 	
 	@Bean 
 	public SqlSessionTemplate sqlSessionTemplate(SqlSessionFactory sf) {
 		return new SqlSessionTemplate(sf);
 	}
 	
-	@Bean
-	public DataSourceTransactionManager dataSourceTransactionManager(DataSource dataSource) {
-		return new DataSourceTransactionManager(dataSource);
+	@Bean 
+	public DataSourceTransactionManager dataSourceTransactionManager(DataSource ds) {
+		return new DataSourceTransactionManager(ds);
 	}
 }

@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<mapper namespace="com.kh.mapper.NaverUserMapper">
-	<insert id="insertNaverUser" parameterType="NaverUser" useGeneratedKeys="true" keyProperty="user_id">
-		INSERT INTO naverusers (id, email, name, password, profile_image) 
-		VALUES (#{id}, #{email}, #{name}, #{password}, #{profile_image})
-	</insert>
-</mapper>

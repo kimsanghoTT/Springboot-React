@@ -1,5 +1,6 @@
 package com.kh.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -7,12 +8,16 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.kh.dto.NaverUser;
+import com.kh.service.NaverUserService;
 
 //리액트와 스프링 프레임워크 연동을 위한 컨트롤러
 //리액트, 네이버로그인과 최종 연동되는 컨트롤러
@@ -98,7 +103,14 @@ public class NaverRegistController {
 		
 		return res;
 	}
+
+	@Autowired
+	private NaverUserService service;
 	
-	@PostMapping
+	@PostMapping("/signUp")
+	public void insertNaverUser(@RequestBody NaverUser naverUser) {
+		service.insertNaverUser(naverUser);
+	}
+
 	
 }
