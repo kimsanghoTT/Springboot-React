@@ -60,8 +60,8 @@ public class PostServiceImpl implements PostService{
 				//랜덤으로 작성한 이름 뒤에 원본 이름을 붙이고 싶을 때 -> getOriginalFilename()
 				String fileName2 = UUID.randomUUID().toString() + file.getOriginalFilename();
 				
-				//랜덤으로 작성한 이름과 원본 이름을 ,로 구분짓고 싶을 때
-				String fileName3 = UUID.randomUUID().toString() + "," + file.getOriginalFilename();
+				//랜덤으로 작성한 이름과 원본 이름을 _로 구분짓고 싶을 때
+				String fileName3 = UUID.randomUUID().toString() + "_" + file.getOriginalFilename();
 				
 				//폴더 안에 이미지들 저장하기
 				File df = new File(uploadDir + File.separator + fileName3);

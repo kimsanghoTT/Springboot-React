@@ -23,7 +23,9 @@ public class PostController {
 	
 	//db에 저장된 게시글 내용, 이미지 가져오기
 	@GetMapping("/posts")
-	public ResponseEntity<List<Post>> findAll(){
+	public ResponseEntity<List<Post>> findAll(){ // 제네릭 : 객체 구분
+		//postService.findAll(); 
+		//-> 데이터가 무수히 많아 목록(리스트)으로 가져와야하는데 리스트로 전달안해주면 react의 map에서 문제가 발생
 		List<Post> posts = postService.findAll();
 		return ResponseEntity.ok(posts);
 	}

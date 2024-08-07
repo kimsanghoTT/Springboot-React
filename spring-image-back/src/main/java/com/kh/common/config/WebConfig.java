@@ -14,8 +14,9 @@ WebSocket 프론트와 백엔드가 서로 상호작용을 주기적으로 진�
 	//react가 이미지폴더 경로를 가져갈 수 있도록 허용
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+		//http://localhost:9015/images/ 모든 경로 허용
 		registry.addResourceHandler("/images/**")
-				.addResourceLocations("C:/Users/user1/Desktop/saveImage/"); //바탕화면에 지정한 이미지 경로
+				.addResourceLocations("file:C:/Users/user1/Desktop/saveImage/"); //바탕화면에 지정한 이미지 경로
 	}
 	
 	@Override
