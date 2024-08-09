@@ -34,7 +34,7 @@ public class ProfileServiceImpl implements ProfileService{
 	}
 	
 	@Override
-	public void uploadProfile(MultipartFile[] files, String username, String profileImageUrl) {
+	public void uploadProfile(MultipartFile[] files, String username) {
 		File profileDirFile = new File(profileDir);
 		
 		//폴더도 하나의 파일이므로 파일로 폴더 여부 확인

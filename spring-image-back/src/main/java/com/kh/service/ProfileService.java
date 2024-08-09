@@ -10,5 +10,5 @@ public interface ProfileService {
 
 	List<Profile> getProfile();
 	void insertProfile(Profile profile);
-	void uploadProfile(MultipartFile[] files, String username, String profileImageUrl);
+	void uploadProfile(MultipartFile[] files, String username);
 }

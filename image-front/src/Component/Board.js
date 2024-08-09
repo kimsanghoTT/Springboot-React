@@ -3,6 +3,8 @@ import axios from 'axios';
 import '../App.css';
 
 const Board = () => {
+  const postAPI = "http://localhost:9015/posts";
+
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const [files, setFiles] = useState([]);
@@ -31,7 +33,7 @@ const Board = () => {
   }
 
   const getPosts = () => {
-    axios.get("http://localhost:9015/posts") // 컨트롤러 url api 주소에서 데이터 가져오기
+    axios.get(postAPI) // 컨트롤러 url api 주소에서 데이터 가져오기
       .then(res => {
         setPosts(res.data);
         console.log(res.data);

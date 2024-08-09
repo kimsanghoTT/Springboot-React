@@ -13,4 +13,8 @@
 		insert into posts (title, content, image_url) values (#{title}, #{content}, #{imageUrl})
 	</insert>
 	
+	<update id="updatePost" parameterType="com.kh.dto.Post">
+		UPDATE posts Set title = #{title}, content = #{content}, image_url = #{imageUrl}
+		WHERE id = #{id}
+	</update>
 </mapper>
