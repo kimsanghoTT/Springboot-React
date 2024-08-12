@@ -5,8 +5,10 @@
 <mapper namespace="com.kh.mapper.NaverUserMapper">
 
     <insert id="insertNaverUser" parameterType="com.kh.dto.NaverUser" useGeneratedKeys="true" keyProperty="user_id">
-        INSERT INTO naverusers (id, email, name, password, profile_image) 
-        VALUES (#{id}, #{email}, #{name}, #{password}, #{profile_image})
+        INSERT INTO naver_user (id, email, nickname, name, gender, profile_image, password) 
+        VALUES (#{id}, #{email}, #{nickname}, #{name}, #{gender}, #{profileImage}, #{password})
     </insert>
-
+	<select id="findAll">
+		select * from naver_user
+	</select>
 </mapper>
