@@ -6,7 +6,7 @@ import com.kh.dto.BCUser;
 
 // mybatis와 mapper를 생략해서 작성하는 방법
 // JpaRepository : sql문을 알아서 작성해줌
-public interface BCUserRepository /*extends JpaRepository<BCUser, Integer>*/{
+public interface BCUserRepository extends JpaRepository<BCUser, Integer>{
 	//save, select로 무언가를 특정하여 검색하는 행동을 하지 않는 한 기본적인 sql 작성 할 필요 없음
 	//BCUser saveUser();
 	

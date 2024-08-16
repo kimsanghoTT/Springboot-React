@@ -12,8 +12,8 @@ import com.kh.repository.BCUserRepository;
 public class BCUserService {
 	
 
-//	@Autowired
-//	private BCUserRepository repository;
+	@Autowired
+	private BCUserRepository repository;
 
 	@Autowired
 	private BCUserMapper mapper;
