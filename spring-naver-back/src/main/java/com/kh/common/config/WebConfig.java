@@ -14,9 +14,12 @@ public class WebConfig implements WebMvcConfigurer{
 	// WebMvcConfigurer mapping 을 재설정
 	@Override
 	public void addCorsMappings(CorsRegistry registry) {
-		registry.addMapping("/**") // http://localhost:3000/ 뒤에 오는 모든 주소값 허용
+		registry
+		.addMapping("/**")
 		.allowedOrigins("http://localhost:3000")
-		.allowedMethods("GET","POST","PUT","DELETE", "OPTIONS") // 모두 주고, 받고 하는 모든 기능 허용
-		.allowCredentials(true); // 쿠기나 세션과 같은 자격을 허용
+		.allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+		.allowedHeaders("*");
+
+		
 	}
 }
