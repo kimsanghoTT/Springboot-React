@@ -23,4 +23,11 @@ public class ChickenService {
 	public Chicken createChicken(Chicken chicken) {
 		return chickenRepository.save(chicken); //DTO에 작성된 컬럼들에 모두 삽입
 	}
+	
+	public Chicken findById(Integer id) {
+		return chickenRepository.findById(id)
+				.orElseThrow(() -> new RuntimeException("일치하는 정보를 찾을 수 없습니다."));
+	}
+
+
 }

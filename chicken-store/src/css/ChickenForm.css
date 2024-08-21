@@ -30,8 +30,10 @@
     padding: 10px 20px;
     cursor: pointer;
     /* 호버에 적힌 색으로 몇초동안 변화할지 설정 */
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, font-size 0.1s ,font-weight 1s;
 }
 .chickenForm-container button:hover{
     background-color: #218838;
+    font-weight: bold;
+    font-size: 20px;
 }
