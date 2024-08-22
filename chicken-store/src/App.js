@@ -7,6 +7,7 @@ function App(){
     return(
         <Router>
             <Routes>
+                {/* Route로 설정된 태그만 들어올 수 있음 */}
                 <Route path='/' element={<MainRouter/>}/>
                 <Route path={`/chicken-detail/:id`} element={<ChickenDetail/>}/>
             </Routes>

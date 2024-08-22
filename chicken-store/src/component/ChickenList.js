@@ -18,9 +18,6 @@ const ChickenList = () => {
             })
     }, [])
 
-    const deleteMenu = (index) => {
-        setChickens(chickens.filter(chicken => index !== chicken.id));
-    }
     /* navigate와 Link 사용에 있어 태그 or 기능을 사용하느냐 차이일 뿐임 */
     return (
         <div className='chicken-container'>
@@ -30,7 +27,7 @@ const ChickenList = () => {
                     <li className="chicken-item" key={chicken.id}>
                         <div className="chicken-name">{chicken.chickenName}</div>
                         <div className="chicken-description">{chicken.description}</div>
-                        <div className="chicken-price">₩{chicken.price}원</div>
+                        <div className="chicken-price">₩{chicken.price.toLocaleString()}원</div>
                         <button className="detail-button"
                             onClick={
                                 () => navigate(`/chicken-detail/${chicken.id}`)
@@ -41,7 +38,7 @@ const ChickenList = () => {
                             <button className="detail-button" >상세보기</button>
                         </Link>
                         */}
-                        <button onClick={() => deleteMenu(chicken.id)}>메뉴삭제</button>
+                        
                     </li>
                 ))}
             </ul>
