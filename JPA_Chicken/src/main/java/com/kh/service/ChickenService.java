@@ -49,4 +49,9 @@ public class ChickenService {
 		System.out.println(chicken);
 		chickenRepository.delete(chicken);
 	}
+	
+	//검색하기
+	public List<Chicken> searchChicken(String query){
+		return chickenRepository.findByChickenNameContainingIgnoreCase(query);
+	}
 }
