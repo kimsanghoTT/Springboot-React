@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from 'axios';
+import '../css/PizzaList.css';
 
 const PizzaList = () => {
 
@@ -24,6 +25,7 @@ const PizzaList = () => {
                         <div className="pizza-name">{pizza.name}</div>
                         <div className="pizza-description">{pizza.description}</div>
                         <div className="pizza-price">{pizza.price}원</div>
+                        <button>상세보기</button>
                     </li>
                 ))}
             </ul>

@@ -2,7 +2,7 @@ import { useState } from "react";
 import PizzaForm from "./PizzaForm";
 import PizzaList from "./PizzaList";
 import Modal from "./Modal";
-import '../App.css';
+import '../css/PizzaRouter.css';
 import { useNavigate } from "react-router-dom";
 
 const PizzaRouter = () => {
